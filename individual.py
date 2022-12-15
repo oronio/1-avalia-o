@@ -100,6 +100,8 @@ class Individual:
             i2 = i[1]
             if i1 == 'i':
                 i = i[1]+i[0]
+            if i1 == 'B' and i2 == 'A':
+                i = i[1]+i[0]
             if i not in GP:
                 GP.append(i)
         return GP
