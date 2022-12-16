@@ -1,6 +1,8 @@
 class Individual:
     counter=0
+    genotypes = ('AA','Ai','BB','Bi','AB','ii')
     def __init__(self,genotype,name=None,blood_type=None,agglutinogens=None, agglutinins=None):
+
         
         self.__genotype = genotype
         self.__genotype1 = genotype[0]
@@ -11,7 +13,11 @@ class Individual:
         self.__blood_type =  blood_type
     
         Individual.counter += 1
+        
+        if genotype not in self.genotypes:
+            raise TypeError('invalid genotype')
 
+        
         if name == None:
             self.__name='indiv'+str(Individual.counter)
         
